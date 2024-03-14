@@ -1,26 +1,33 @@
 @use "../utils/variables" as *;
 
 .game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
   &__board {
-    width: calc(4 * 6rem);
-    height: calc(4 * 6rem);
-    border: 2px solid;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     flex-direction: row;
     flex-wrap: wrap;
   }
 
   &__buttons {
-    height: 6rem;
-    width: calc(4 * 6rem);
-    border: 2px solid;
+    height: 5rem;
+    width: calc((4 + 0.5) * 4rem);
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   &__cell {
-    width: 6rem;
-    height: 6rem;
-    font-size: cal(6rem / 2);
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +41,22 @@
       &:hover {
         background-color: grey;
       }
+    }
+
+    &--bottom-border {
+      border-bottom-color: $text-color;
+    }
+
+    &--right-border {
+      border-right-color: $text-color;
+    }
+
+    &--top-border {
+      border-top-color: $text-color;
+    }
+
+    &--left-border {
+      border-left-color: $text-color;
     }
   }
 
