@@ -1,0 +1,47 @@
+@use "../utils/variables" as *;
+
+.game {
+  &__board {
+    width: calc(4 * 6rem);
+    height: calc(4 * 6rem);
+    border: 2px solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__buttons {
+    height: 6rem;
+    width: calc(4 * 6rem);
+    border: 2px solid;
+    display: flex;
+  }
+
+  &__cell {
+    width: 6rem;
+    height: 6rem;
+    font-size: cal(6rem / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+
+    &--tile {
+      border-color: $border-color;
+    }
+
+    &--button {
+      &:hover {
+        background-color: grey;
+      }
+    }
+  }
+
+  .selected {
+    background-color: darkgray;
+  }
+
+  .given {
+    background-color: grey;
+  }
+}
