@@ -14,7 +14,7 @@
     align-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    border:4px solid $text-color
+    border: 4px solid $text-color;
   }
 
   &__buttons {
@@ -37,12 +37,6 @@
       border-color: $border-color;
     }
 
-    &--button {
-      &:hover {
-        background-color: grey;
-      }
-    }
-
     &--bottom-border {
       border-bottom-color: $text-color;
     }
@@ -58,6 +52,18 @@
     &--left-border {
       border-left-color: $text-color;
     }
+
+    &:hover {
+      background-color: $border-color;
+    }
+
+    &:active {
+      background-color: $highlighted;
+    }
+  }
+
+  .question {
+    color: $question-color;
   }
 
   .selected {

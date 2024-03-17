@@ -3,18 +3,20 @@ export const displayPuzzle = (
   puzzle: string[],
   boardWidth: number
 ): void => {
-  const cells = board.childNodes;
+  const cells = board.children;
   let i: number = 0,
     j: number = 0;
   for (const cell of cells) {
-    let textNode = document.createTextNode("Hello World");
-    puzzle[i][j] != `-` ? (textNode.data = puzzle[i][j]) : (textNode.data = "");
-    cell.appendChild(textNode);
+    if (puzzle[i][j] != `-`) {
+      cell.textContent = puzzle[i][j];
+      cell.classList.add("question")
+    } else {
+      cell.textContent = "";
+    }
     j++;
     if (j == boardWidth) {
       i++;
       j = 0;
     }
   }
-  console.log(cells);
 };
