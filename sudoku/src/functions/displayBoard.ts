@@ -1,12 +1,12 @@
 export function displayCells(
   board: HTMLElement,
-  amountOfRows: number,
-  amountOfColumns: number,
+  boardWidth: number,
+  boardHeight: number,
   rowLineAt: number,
   columnLineAt: number
 ) {
-  for (let row = 1; row <= amountOfRows; row++) {
-    for (let col = 1; col <= amountOfColumns; col++) {
+  for (let row = 1; row <= boardHeight; row++) {
+    for (let col = 1; col <= boardWidth; col++) {
       let cell = document.createElement("div");
       cell.id = `${row}:${col}`;
       cell.classList.add("game__cell--tile", "game__cell");
@@ -20,8 +20,7 @@ export function displayCells(
       } else if (row % rowLineAt == 0) {
         cell.classList.add("game__cell--bottom-border");
       }
-      board.style.width = `${amountOfColumns * 4 + 1}rem`;
-      board.style.height = `${amountOfRows * 4 + 1}rem`;
+      board.style.width = `${boardWidth * 4 + 0.5}rem`;
       board.appendChild(cell);
     }
   }
