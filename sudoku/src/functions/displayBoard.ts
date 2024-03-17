@@ -2,22 +2,22 @@ export function displayCells(
   board: HTMLElement,
   boardWidth: number,
   boardHeight: number,
-  rowLineAt: number,
-  columnLineAt: number
+  rowWidth: number,
+  columnWidth: number
 ) {
   for (let row = 1; row <= boardHeight; row++) {
     for (let col = 1; col <= boardWidth; col++) {
       let cell = document.createElement("div");
       cell.id = `${row}:${col}`;
       cell.classList.add("game__cell--tile", "game__cell");
-      if (col % columnLineAt == 1) {
+      if (col % columnWidth == 1) {
         cell.classList.add("game__cell--left-border");
-      } else if (col % columnLineAt == 0) {
+      } else if (col % columnWidth == 0) {
         cell.classList.add("game__cell--right-border");
       }
-      if (row % rowLineAt == 1) {
+      if (row % rowWidth == 1) {
         cell.classList.add("game__cell--top-border");
-      } else if (row % rowLineAt == 0) {
+      } else if (row % rowWidth == 0) {
         cell.classList.add("game__cell--bottom-border");
       }
       board.style.width = `${boardWidth * 4 + 0.5}rem`;
