@@ -53,12 +53,12 @@
       border-left-color: $text-color;
     }
 
-    &:hover {
-      background-color: $border-color;
-    }
-
-    &:active {
-      background-color: $highlighted;
+    &--button {
+      border-radius: 1rem;
+      &:hover {
+        font-size: 3.2rem;
+        text-shadow: $highlighted 1px 1px 10px;
+      }
     }
   }
 
@@ -72,5 +72,15 @@
 
   .secondaryHighlight {
     background-color: $border-color;
+  }
+
+  .disabled {
+    background-color: $border-color;
+    color: $question-color;
+    text-shadow: none;
+
+    &:hover {
+      font-size: 3rem;
+    }
   }
 }
