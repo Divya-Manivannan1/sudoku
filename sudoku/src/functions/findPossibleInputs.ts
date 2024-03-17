@@ -5,7 +5,6 @@ export const findPossibleInputs = (
   rowWidth: number,
   columnWidth: number
 ): string[] => {
-
   let possibleValues: string[] = [];
   const blockCol: number = Math.ceil(+col / rowWidth);
   const blockRow: number = Math.ceil(+row / columnWidth);
