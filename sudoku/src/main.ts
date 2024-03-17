@@ -1,11 +1,12 @@
 import "./style.scss";
 
-import { puzzle } from "./data/puzzles";
+import { answer, puzzle } from "./data/puzzles";
 
 import { displayButtons } from "./functions/displayButtons";
 import { displayCells } from "./functions/displayBoard";
 import { displayPuzzle } from "./functions/displayPuzzle";
 import { handleBoardClickEvent } from "./functions/handleBoardClickEvent";
+import { handleButtonClickEvent } from "./functions/handleButtonClickEvent";
 
 const buttons = document.querySelector<HTMLElement>(".game__buttons");
 const board = document.querySelector<HTMLElement>(".game__board");
@@ -18,4 +19,6 @@ displayButtons(buttons, 4);
 displayCells(board, 4, 4, 2, 2);
 displayPuzzle(board, puzzle, 4);
 
-board.addEventListener("click", (e)=>handleBoardClickEvent(e,2,2));
+let cell:HTMLElement;
+board.addEventListener("click", (e):HTMLElement=> cell =handleBoardClickEvent(e,2,2));
+buttons.addEventListener("click", (e:Event) => handleButtonClickEvent(e,  cell, answer));

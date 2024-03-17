@@ -56,7 +56,7 @@
     &--button {
       border-radius: 1rem;
       &:hover {
-        font-size: 3.2rem;
+        font-size: 3.1rem;
         text-shadow: $highlighted 1px 1px 10px;
       }
     }
@@ -82,5 +82,9 @@
     &:hover {
       font-size: 3rem;
     }
+  }
+
+  .wrong {
+    color: $wrong-answer;
   }
 }
