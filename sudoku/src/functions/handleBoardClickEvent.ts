@@ -67,11 +67,3 @@ export const handleBoardClickEvent = (
 
   return cell;
 };
-
-export const handleButtonClickEvent = (event: Event, cell: HTMLElement) => {
-  const button = event.target as HTMLElement;
-  if (!button.classList.contains("disabled")) {
-    console.log(cell);
-    cell.textContent = button.textContent as string;
-  }
-};
