@@ -22,6 +22,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+
   }
 
   &__cell {
@@ -53,13 +55,10 @@
       border-left-color: $text-color;
     }
 
-    &:hover {
-      background-color: $border-color;
+    &--button:hover{
+      font-size: 3.5rem;
     }
 
-    &:active {
-      background-color: $highlighted;
-    }
   }
 
   .question {
@@ -72,5 +71,10 @@
 
   .secondaryHighlight {
     background-color: $border-color;
+  }
+
+  .disabled {
+    background-color: $border-color;
+    color: $question-color;
   }
 }
