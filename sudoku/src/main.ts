@@ -15,7 +15,7 @@ if (!buttons || !board) {
   throw new Error("Problem with querry selector");
 }
 
-displayButtons(buttons, 4);
+displayButtons(buttons, 6);
 displayCells(board, 4, 4, 2, 2);
 displayPuzzle(board, puzzle, 4);
 
