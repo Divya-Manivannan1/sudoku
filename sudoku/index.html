@@ -2,24 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sudoku</title>
+    <title>SuDoKu</title>
   </head>
   <body>
-    <main class="game">
-      <summary class="congratulations">
-        <p>Congratulations!</p>
-        <p>You have Won!!</p>
+    <form>
+      <h1>Welcome to Divya's SuDoKu game!!!</h1>
+      <fieldset>
+        <legend>Choose your desired settings:</legend>
+        <label for="board-size">Please choose the desired board-size</label>
+        <label for="2*2">
+          <input type="radio" id="2*2" name="board-size" value="4" />
+          <img src="./src/resources/Sudoku4.svg" height="100px" width="100px" />
+        </label>
+        <label for="2*3">
+          <input type="radio" id="2*3" name="board-size" value="6" />
+          <img src="./src/resources/Sudoku6.png" height="100px" width="100px" />
+        </label>
+        <label for="3*3">
+          <input type="radio" id="3*3" name="board-size" value="9" />
+          <img src="./src/resources/Sudoku9.svg" height="100px" width="100px" />
+        </label>
         <br />
-        <a href="index.html" class="congratulations__button"
-          >Back to homepage</a
-        >
-      </summary>
-      <section class="game__board"></section>
-      <br />
-      <section class="game__buttons"></section>
-    </main>
-    <script type="module" src="/src/main.ts"></script>
+        <label class="switch">
+          Would you like the related tiles to be highlighted?
+          <input type="radio" />
+          <span class="slider"></span>
+        </label>
+        <br />
+        <label class="switch">
+          Would you like the buttons with imposible values to be disabled?
+          <input type="radio" />
+          <span class="slider"></span>
+        </label>
+        <br />
+      </fieldset>
+      <button type="submit">Let's Play!</button>
+    </form>
   </body>
 </html>
