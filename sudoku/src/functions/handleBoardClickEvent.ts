@@ -1,30 +1,34 @@
+import { Board } from "../data/types";
 import { findPossibleInputs } from "./findPossibleInputs";
 import { highlightReleventButtons } from "./highlightReleventButtons";
 import { highlightReleventTiles } from "./highlightReleventTiles";
 
 export const handleBoardClickEvent = (
   event: Event,
-  rowWidth: number,
-  columnWidth: number
+  boardObj: Board
 ): HTMLElement => {
+  const {
+    areRelatedCellsHighlighted,
+    areRelatedButtonsHighlighted,
+    isUndoEnabled,
+    moves,
+  } = boardObj;
   const cell = event.target as HTMLElement;
   const board = event.currentTarget as HTMLElement;
   const buttons = board.nextElementSibling?.nextElementSibling as HTMLElement;
-  const [row, col] = cell.id.split(":");
 
   //highlights the relevent row, col and block
-  highlightReleventTiles(board.children, cell, rowWidth, columnWidth);
+  if (areRelatedCellsHighlighted)
+    highlightReleventTiles(board.children, cell, boardObj);
+
+  //highlight the selected tile
+  cell.classList.add("mainHighlight");
+  cell.classList.remove("secondaryHighlight");
 
   //checking if the cell contains the puzzle question
-  if (!cell.classList.contains("question")) {
+  if (areRelatedButtonsHighlighted) {
     //find the posible inputs for the cell
-    const possibleValues = findPossibleInputs(
-      board.children,
-      row,
-      col,
-      rowWidth,
-      columnWidth
-    );
+    const possibleValues = findPossibleInputs(board.children, cell, boardObj);
 
     highlightReleventButtons(buttons.children, possibleValues);
   }

@@ -1,11 +1,19 @@
+import { Board } from "../data/types";
+import { boardObj } from "../main";
+
 export const findPossibleInputs = (
   tiles: HTMLCollection,
-  row: string,
-  col: string,
-  rowWidth: number,
-  columnWidth: number
+  cell: HTMLElement,
+  boardObject: Board = boardObj
 ): string[] => {
   let possibleValues: string[] = [];
+
+  if (cell.classList.contains("question")) return possibleValues;
+  if (cell.textContent != "" && !cell.classList.contains("wrong"))
+    return possibleValues;
+
+  const [row, col] = cell.id.split(":");
+  const { rowWidth, columnWidth } = boardObject;
   const blockCol: number = Math.ceil(+col / rowWidth);
   const blockRow: number = Math.ceil(+row / columnWidth);
 

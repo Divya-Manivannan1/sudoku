@@ -1,10 +1,7 @@
-export function displayCells(
-  board: HTMLElement,
-  boardWidth: number,
-  boardHeight: number,
-  rowWidth: number,
-  columnWidth: number
-) {
+import { Board } from "../data/types";
+
+export function displayCells(board: HTMLElement, boardObj: Board) {
+  const { boardWidth, boardHeight, rowWidth, columnWidth } = boardObj;
   for (let row = 1; row <= boardHeight; row++) {
     for (let col = 1; col <= boardWidth; col++) {
       let cell = document.createElement("div");
