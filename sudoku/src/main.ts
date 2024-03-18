@@ -1,6 +1,7 @@
 import "./style.scss";
 
 import { answer, puzzle } from "./data/puzzles";
+import { Board } from "./data/types";
 
 import { displayButtons } from "./functions/displayButtons";
 import { displayCells } from "./functions/displayBoard";
@@ -15,10 +16,26 @@ if (!buttons || !board) {
   throw new Error("Problem with querry selector");
 }
 
-displayButtons(buttons, 6);
-displayCells(board, 4, 4, 2, 2);
-displayPuzzle(board, puzzle, 4);
+export const boardObj: Board = {
+  boardWidth: 4,
+  boardHeight: 4,
+  rowWidth: 2,
+  columnWidth: 2,
+  areRelatedCellsHighlighted: true,
+  areRelatedButtonsHighlighted: true,
+  isUndoEnabled: false,
+  moves: [],
+};
 
-let cell:HTMLElement;
-board.addEventListener("click", (e):HTMLElement=> cell =handleBoardClickEvent(e,2,2));
-buttons.addEventListener("click", (e:Event) => handleButtonClickEvent(e,  cell, answer));
+displayButtons(buttons, boardObj.columnWidth * boardObj.rowWidth);
+displayCells(board, boardObj);
+displayPuzzle(board, puzzle, boardObj.boardWidth);
+
+let cell: HTMLElement;
+board.addEventListener(
+  "click",
+  (e): HTMLElement => (cell = handleBoardClickEvent(e, boardObj))
+);
+buttons.addEventListener("click", (e: Event) =>
+  handleButtonClickEvent(e, cell, answer)
+);
