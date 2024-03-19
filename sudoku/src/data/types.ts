@@ -14,3 +14,9 @@ export type Board = {
   isUndoEnabled: boolean;
   moves: Move[];
 };
+
+export type Time = {
+  minutes: number;
+  seconds: number;
+  asString: Function;
+};
