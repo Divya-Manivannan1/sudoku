@@ -14,6 +14,7 @@ export const highlightReleventTiles = (
     tile.classList.remove("secondaryHighlight", "mainHighlight");
     if (
       j == col ||
+      i == row ||
       (+i <= blockRow * rowWidth &&
         +i > (blockRow - 1) * rowWidth &&
         +j <= blockCol * columnWidth &&
