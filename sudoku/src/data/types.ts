@@ -19,4 +19,5 @@ export type Time = {
   minutes: number;
   seconds: number;
   asString: Function;
+  incrementTime: Function;
 };
