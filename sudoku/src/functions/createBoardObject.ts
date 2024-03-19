@@ -7,7 +7,6 @@ export const createBoardObject = (): Board => {
     rWidth: number = 0,
     cWidth: number = 0;
   let tempStrings: string[] = url.split("board-size=");
-  console.table(tempStrings);
   switch (tempStrings[1][0]) {
     case "4":
       bWidth = bHeight = 4;
