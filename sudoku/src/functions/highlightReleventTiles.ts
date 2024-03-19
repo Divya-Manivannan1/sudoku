@@ -9,7 +9,7 @@ export const highlightReleventTiles = (
   const [row, col] = cell.id.split(":");
   const blockCol: number = Math.ceil(+col / rowWidth);
   const blockRow: number = Math.ceil(+row / columnWidth);
-  for (const tile of tiles) {
+  for (const tile of Array.from(tiles)) {
     const [i, j] = tile.id.split(":");
     tile.classList.remove("secondaryHighlight", "mainHighlight");
     if (
