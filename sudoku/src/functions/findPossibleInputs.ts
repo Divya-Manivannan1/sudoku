@@ -1,11 +1,11 @@
 import { Board } from "../data/types";
-import { boardObj } from "../main";
+import { createBoardObject } from "./createBoardObject";
 
 export const findPossibleInputs = (
   tiles: HTMLCollection,
-  cell: HTMLElement,
-  boardObject: Board = boardObj
+  cell: HTMLElement
 ): string[] => {
+  const boardObj: Board = createBoardObject();
   let possibleValues: string[] = [];
 
   if (cell.classList.contains("question")) return possibleValues;
@@ -13,7 +13,7 @@ export const findPossibleInputs = (
     return possibleValues;
 
   const [row, col] = cell.id.split(":");
-  const { rowWidth, columnWidth } = boardObject;
+  const { rowWidth, columnWidth } = boardObj;
   const blockCol: number = Math.ceil(+col / rowWidth);
   const blockRow: number = Math.ceil(+row / columnWidth);
 

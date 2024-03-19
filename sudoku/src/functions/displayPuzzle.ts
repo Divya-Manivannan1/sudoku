@@ -9,7 +9,7 @@ export const displayPuzzle = (
   for (const cell of cells) {
     if (puzzle[i][j] != `-`) {
       cell.textContent = puzzle[i][j];
-      cell.classList.add("question")
+      cell.classList.add("question");
     } else {
       cell.textContent = "";
     }
