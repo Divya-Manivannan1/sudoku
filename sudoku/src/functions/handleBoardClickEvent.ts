@@ -7,12 +7,7 @@ export const handleBoardClickEvent = (
   event: Event,
   boardObj: Board
 ): HTMLElement => {
-  const {
-    areRelatedCellsHighlighted,
-    areRelatedButtonsHighlighted,
-    isUndoEnabled,
-    moves,
-  } = boardObj;
+  const { areRelatedCellsHighlighted, areRelatedButtonsHighlighted } = boardObj;
   const cell = event.target as HTMLElement;
   const board = event.currentTarget as HTMLElement;
   const buttons = board.nextElementSibling?.nextElementSibling as HTMLElement;
@@ -28,7 +23,7 @@ export const handleBoardClickEvent = (
   //checking if the cell contains the puzzle question
   if (areRelatedButtonsHighlighted) {
     //find the posible inputs for the cell
-    const possibleValues = findPossibleInputs(board.children, cell, boardObj);
+    const possibleValues = findPossibleInputs(board.children, cell);
 
     highlightReleventButtons(buttons.children, possibleValues);
   }

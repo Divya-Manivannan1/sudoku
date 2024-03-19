@@ -10,6 +10,7 @@ export type Board = {
   columnWidth: number;
   areRelatedCellsHighlighted: boolean;
   areRelatedButtonsHighlighted: boolean;
+  isTimerEnabled: boolean;
   isUndoEnabled: boolean;
   moves: Move[];
 };
