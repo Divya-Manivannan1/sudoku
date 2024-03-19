@@ -1,8 +1,8 @@
 import { Board } from "../data/types";
 
-export function displayCells(board: HTMLElement, boardObj: Board) {
-  const { boardWidth, boardHeight, rowWidth, columnWidth } = boardObj;
-  for (let row = 1; row <= boardHeight; row++) {
+export function displayBoard(board: HTMLElement, boardObj: Board) {
+  const { boardWidth, rowWidth, columnWidth } = boardObj;
+  for (let row = 1; row <= boardWidth; row++) {
     for (let col = 1; col <= boardWidth; col++) {
       const cell = document.createElement("div");
       cell.id = `${row}:${col}`;

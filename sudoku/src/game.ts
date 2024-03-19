@@ -1,15 +1,15 @@
 import "./game-style.scss";
 
-import { answer, puzzle } from "./data/puzzles";
 import { Board } from "./data/types";
 
 import { displayButtons } from "./functions/displayButtons";
-import { displayCells } from "./functions/displayBoard";
+import { displayBoard } from "./functions/displayBoard";
 import { displayPuzzle } from "./functions/displayPuzzle";
 import { handleBoardClickEvent } from "./functions/handleBoardClickEvent";
 import { handleButtonClickEvent } from "./functions/handleButtonClickEvent";
 import { createBoardObject } from "./functions/createBoardObject";
 import { displayTimer } from "./functions/displayTimer";
+import { getPuzzle } from "./functions/getPuzzle";
 
 const buttons = document.querySelector<HTMLElement>(".game__buttons");
 const board = document.querySelector<HTMLElement>(".game__board");
@@ -21,8 +21,9 @@ if (!buttons || !board || !features) {
 
 const boardObj: Board = createBoardObject();
 displayButtons(buttons, boardObj.columnWidth * boardObj.rowWidth);
-displayCells(board, boardObj);
-displayPuzzle(board, puzzle, boardObj.boardWidth);
+displayBoard(board, boardObj);
+const puzzle = getPuzzle(boardObj.boardWidth);
+displayPuzzle(board, puzzle.question, boardObj.boardWidth);
 displayTimer(features, boardObj.isTimerEnabled);
 
 let cell: HTMLElement;
@@ -31,5 +32,5 @@ board.addEventListener(
   (e): HTMLElement => (cell = handleBoardClickEvent(e, boardObj))
 );
 buttons.addEventListener("click", (e: Event) =>
-  handleButtonClickEvent(e, cell, answer)
+  handleButtonClickEvent(e, cell, puzzle.answer)
 );

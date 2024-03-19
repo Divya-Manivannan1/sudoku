@@ -66,12 +66,11 @@
     color: $question-color;
   }
 
-  .mainHighlight {
-    background-color: $highlighted;
-  }
-
   .secondaryHighlight {
     background-color: $border-color;
+  }
+  .mainHighlight {
+    background-color: $highlighted;
   }
 
   .disabled {

@@ -3,11 +3,15 @@ type Move = {
   value: string;
 };
 
+export type Puzzle = {
+  question: string[];
+  answer: string[];
+};
+
 export type Board = {
-  boardWidth: number;
-  boardHeight: number;
-  rowWidth: number;
-  columnWidth: number;
+  boardWidth: 4|6|9;
+  rowWidth: 2|3;
+  columnWidth: 2|3;
   areRelatedCellsHighlighted: boolean;
   areRelatedButtonsHighlighted: boolean;
   isTimerEnabled: boolean;
