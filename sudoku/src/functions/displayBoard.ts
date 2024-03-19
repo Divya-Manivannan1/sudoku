@@ -4,7 +4,7 @@ export function displayCells(board: HTMLElement, boardObj: Board) {
   const { boardWidth, boardHeight, rowWidth, columnWidth } = boardObj;
   for (let row = 1; row <= boardHeight; row++) {
     for (let col = 1; col <= boardWidth; col++) {
-      let cell = document.createElement("div");
+      const cell = document.createElement("div");
       cell.id = `${row}:${col}`;
       cell.classList.add("game__cell--tile", "game__cell");
       if (col % columnWidth == 1) {
