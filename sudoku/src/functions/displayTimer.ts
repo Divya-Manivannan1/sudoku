@@ -5,7 +5,6 @@ export const displayTimer = (
   isTimerEnabled: boolean
 ) => {
   const timer = document.createElement("div");
-
   if (isTimerEnabled) {
     timer.innerHTML = `<time>${time.asString()}</time>`;
     features.appendChild(timer);
