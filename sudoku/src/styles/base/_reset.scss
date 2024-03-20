@@ -12,18 +12,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: $background-color;
+  background: $highlighted;
   color: $text-color;
   padding: 2rem;
   height: 100vh;
 }
 
 img {
+  background-color: white;
   height: 25vw;
   width: 25vw;
 }
 
-.image1 {
-  height: 28vw;
-  width: 28vw;
+h1 {
+  text-shadow: $background-color 0 0 5px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
+  img {
+    max-width: 300px;
+    max-height: 300px;
+  }
 }
