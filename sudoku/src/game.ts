@@ -24,7 +24,7 @@ displayButtons(buttons, boardObj.columnWidth * boardObj.rowWidth);
 displayBoard(board, boardObj);
 const puzzle = getPuzzle(boardObj.boardWidth);
 displayPuzzle(board, puzzle.question, boardObj.boardWidth);
-displayTimer(features, boardObj.isTimerEnabled);
+displayTimer(features, boardObj.isTimerEnabled, false);
 //resert
 
 let cell: HTMLElement;
