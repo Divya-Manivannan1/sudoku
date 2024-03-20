@@ -17,7 +17,7 @@ export function displayBoard(board: HTMLElement, boardObj: Board) {
       } else if (row % rowWidth == 0) {
         cell.classList.add("game__cell--bottom-border");
       }
-      board.style.width = `${boardWidth * 4 + 0.5}rem`;
+      board.style.width = `${boardWidth * 3 + 0.5}rem`;
       board.appendChild(cell);
     }
   }
