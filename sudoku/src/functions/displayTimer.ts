@@ -1,16 +1,21 @@
 import { time } from "../data/timerObj";
 
 export const displayTimer = (
-  features: HTMLElement,
-  isTimerEnabled: boolean
+  el: HTMLElement,
+  isTimerEnabled: boolean,
+  isBoardSolved:boolean
 ) => {
   const timer = document.createElement("div");
-  if (isTimerEnabled) {
+  timer.innerHTML = `<time>${time.asString()}</time>`;
+  const timerClock = setInterval(() => {
+    time.incrementTime();
     timer.innerHTML = `<time>${time.asString()}</time>`;
-    features.appendChild(timer);
-    setInterval(() => {
-      time.incrementTime();
-      timer.innerHTML = `<time>${time.asString()}</time>`;
-    }, 1000);
+  }, 1000);
+  if (isTimerEnabled || isBoardSolved) {
+    el.appendChild(timer);
   }
+  if(isBoardSolved)
+  clearInterval(timerClock);
+
+
 };
