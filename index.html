@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuDoKu</title>
+    <script type="module" crossorigin src="./assets/index-CgsvIf2k.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DyP3yQYa.css">
+  </head>
+  <body>
+    <form class="form" action="game.html" method="get">
+      <h1 class="form__heading">Welcome to Divya's SuDoKu game!!!</h1>
+      <fieldset class="form__fieldset">
+        <legend class="form__fieldset-legand">
+          Choose your desired settings:
+        </legend>
+        <label for="board-size" class="form__board-size">
+          <p>Please choose the desired board-size!</p>
+          <label class="form__board-size-label" for="2*2">
+            <input
+              type="radio"
+              id="2*2"
+              name="board-size"
+              value="4"
+              class="form__board-size-input"
+              checked
+            />
+            <img
+              src="./assets/Sudoku4-Rg8NvGRM.svg"
+              height="115px"
+              width="115px"
+              class="form__board-size-img"
+            />
+          </label>
+          <label class="form__board-size-label" for="2*3">
+            <input
+              type="radio"
+              id="2*3"
+              name="board-size"
+              value="6"
+              class="form__board-size-input"
+            />
+            <img
+              src="data:image/png;base64,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"
+              height="100px"
+              width="100px"
+              class="form__board-size-img"
+            />
+          </label>
+          <label class="form__board-size-label" for="3*3">
+            <input
+              type="radio"
+              id="3*3"
+              name="board-size"
+              value="9"
+              class="form__board-size-input"
+            />
+            <img
+              src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'?%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='300'%20height='300'%20stroke='%23000'%20stroke-width='2'%20fill='none'%3e%3crect%20x='1'%20y='1'%20width='298'%20height='298'/%3e%3cpath%20d='M100,1V299m99,0V1m100,99H1m0,99H299'/%3e%3cpath%20stroke-width='.7'%20d='m34,1V299m33,0V1m66,0V299m33,0V1m66%200V299m33,0V1m34,264H1m0-33H299m0-66H1m0-33H299m0-66H1m0-33H299m0-33H1'/%3e%3c/svg%3e"
+              height="100px"
+              width="100px"
+              class="form__board-size-img"
+            />
+          </label>
+        </label>
+        <div>
+          <label for="highlight-cells" class="form__switch">
+            Would you like the related tiles to be highlighted?</label
+          >
+          <input
+            type="checkbox"
+            name="highlight-cells"
+            class="form__switch-button"
+            value="true"
+          />
+          <span class="form__switch-slider"></span>
+        </div>
+        <label class="form__switch">
+          Would you like the buttons with imposible values to be disabled?
+          <input
+            type="checkbox"
+            name="highlight-buttons"
+            class="form__switch-button"
+            value="true"
+          />
+          <span class="form__switch-slider"></span>
+        </label>
+        <label class="form__switch">
+          Would you like to time the game?
+          <input
+            type="checkbox"
+            name="timer"
+            class="form__switch-button"
+            value="true"
+          />
+          <span class="form__switch-slider"></span>
+        </label>
+      </fieldset>
+      <button type="submit" class="form__submit-button">Let's Play!</button>
+    </form>
+  </body>
+</html>
