@@ -1,4 +1,3 @@
-import { Board } from "../data/types";
 import { createBoardObject } from "./createBoardObject";
 
 export const findPossibleInputs = (

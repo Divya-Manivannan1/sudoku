@@ -5,13 +5,13 @@ export const getPuzzle = (size: 4 | 6 | 9): Puzzle => {
   let puzzle: Puzzle;
   switch (size) {
     case 4:
-      puzzle = puzzle4;
+      puzzle = puzzle4[Math.floor(Math.random() * puzzle4.length)];
       break;
     case 6:
-      puzzle = puzzle6;
+      puzzle = puzzle6[Math.floor(Math.random() * puzzle4.length)];
       break;
     case 9:
-      puzzle = puzzle9;
+      puzzle = puzzle9[Math.floor(Math.random() * puzzle4.length)];
       break;
   }
   return puzzle;

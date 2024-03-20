@@ -25,6 +25,7 @@ displayBoard(board, boardObj);
 const puzzle = getPuzzle(boardObj.boardWidth);
 displayPuzzle(board, puzzle.question, boardObj.boardWidth);
 displayTimer(features, boardObj.isTimerEnabled);
+//resert
 
 let cell: HTMLElement;
 board.addEventListener(
@@ -32,5 +33,5 @@ board.addEventListener(
   (e): HTMLElement => (cell = handleBoardClickEvent(e, boardObj))
 );
 buttons.addEventListener("click", (e: Event) =>
-  handleButtonClickEvent(e, cell, puzzle.answer)
+  handleButtonClickEvent(e, cell, puzzle.answer, boardObj)
 );
