@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  font-size: 1.5rem;
+  gap: 1rem;
+  font-size: 1rem;
 
   h1 {
     color: green;
@@ -15,17 +15,18 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem 4rem;
+    gap: 1rem;
+    padding: 1rem 2rem 1rem 1rem;
   }
 
   &__board-size {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    grid-template: 1fr 4fr / 1fr 1fr 1fr;
     grid-template-areas: "heading heading heading" "one two three";
 
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 
     :nth-child(1) {
       grid-area: heading;
@@ -92,5 +93,11 @@
       color: green;
       border-color: green;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    font-size: 1.5rem;
   }
 }

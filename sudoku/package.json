@@ -1,4 +1,6 @@
 {
+  "homepage": "https://divya-manivannan1.github.io/sudoku/",
+  "author": "Divya",
   "name": "sudoku",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +10,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test:jest": "vitest",
-    "test:cypress": "cypress open"
+    "test:cypress": "cypress open",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

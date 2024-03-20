@@ -22,6 +22,11 @@ export const handleButtonClickEvent = (
       if (verifyIfBoardIsSolved(cell.parentElement as HTMLElement)) {
         congratulations(cell.parentElement as HTMLElement);
       }
+      for (const num of Array.from(
+        button.parentElement?.children as HTMLCollection
+      )) {
+        num.classList.add("disabled");
+      }
     } else cell.classList.add("wrong");
   }
 

@@ -14,5 +14,16 @@ body {
   align-items: center;
   background: $background-color;
   color: $text-color;
+  padding: 2rem;
   height: 100vh;
+}
+
+img {
+  height: 25vw;
+  width: 25vw;
+}
+
+.image1 {
+  height: 28vw;
+  width: 28vw;
 }
