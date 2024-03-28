@@ -5,8 +5,10 @@ import { highlightReleventTiles } from "./highlightReleventTiles";
 
 export const handleBoardClickEvent = (
   event: Event,
-  boardObj: Board
+  boardObj: Board,
+  previousCell: HTMLElement
 ): HTMLElement => {
+  previousCell.classList.remove("mainHighlight");
   const { areRelatedCellsHighlighted } = boardObj;
   const cell = event.target as HTMLElement;
   const board = event.currentTarget as HTMLElement;

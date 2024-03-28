@@ -1,7 +1,5 @@
 import { verifyIfBoardIsSolved } from "./verifyIfBoardIsSolved";
 import { congratulations } from "./congratulations";
-import { findPossibleInputs } from "./findPossibleInputs";
-import { highlightReleventButtons } from "./highlightReleventButtons";
 import { highlightReleventTiles } from "./highlightReleventTiles";
 import { Board } from "../data/types";
 
