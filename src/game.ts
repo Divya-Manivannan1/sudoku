@@ -21,7 +21,7 @@ if (!buttons || !board || !features) {
 }
 
 //Creating BoardObj based on the url.
-const boardObj: Board = createBoardObject();
+const boardObj: Board = createBoardObject(document.URL);
 
 //Dynamically grnerating the cells for the board and buttons
 displayButtons(buttons, boardObj.columnWidth * boardObj.rowWidth);

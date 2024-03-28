@@ -1,12 +1,12 @@
 import { Board } from "../data/types";
 
-export const createBoardObject = (): Board => {
-  const url: string = document.URL;
+export const createBoardObject = (url: string): Board => {
+  const searchParams = new URLSearchParams(url);
   let bWidth: 4 | 6 | 9 = 4,
     rWidth: 2 | 3 = 2,
     cWidth: 2 | 3 = 2;
-  let tempStrings: string[] = url.split("board-size=");
-  switch (tempStrings[1][0]) {
+
+  switch (searchParams.get("board-size")) {
     case "6":
       bWidth = 6;
       cWidth = 3;
@@ -21,9 +21,9 @@ export const createBoardObject = (): Board => {
     boardWidth: bWidth,
     rowWidth: rWidth,
     columnWidth: cWidth,
-    areRelatedCellsHighlighted: tempStrings[1].includes("highlight-cells"),
-    areRelatedButtonsHighlighted: tempStrings[1].includes("highlight-buttons"),
-    isTimerEnabled: tempStrings[1].includes("timer"),
+    areRelatedCellsHighlighted: searchParams.has("highlight-cells"),
+    areRelatedButtonsHighlighted: searchParams.has("highlight-buttons"),
+    isTimerEnabled: searchParams.has("timer"),
   };
 
   return boardObj;

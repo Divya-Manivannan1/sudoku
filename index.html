@@ -12,6 +12,38 @@
         <legend class="form__fieldset-legand">
           Choose your desired settings:
         </legend>
+        <div>
+          <label for="highlight-cells" class="form__switch">
+            Would you like the related tiles to be highlighted?</label
+          ><br />
+          <input
+            type="checkbox"
+            name="highlight-cells"
+            class="form__switch-button"
+            value="true"
+          />
+          <span class="form__switch-slider"></span>
+        </div>
+        <label class="form__switch">
+          Would you like the buttons with imposible values to be disabled?<br />
+          <input
+            type="checkbox"
+            name="highlight-buttons"
+            class="form__switch-button"
+            value="true"
+          />
+          <span class="form__switch-slider"></span>
+        </label>
+        <label class="form__switch">
+          Would you like to time the game?<br />
+          <input
+            type="checkbox"
+            name="timer"
+            class="form__switch-button"
+            value="true"
+          />
+          <span class="form__switch-slider"></span>
+        </label>
         <label for="board-size" class="form__board-size">
           <p>Please choose the desired board-size!</p>
           <label class="form__board-size-label" for="2*2">
@@ -54,38 +86,6 @@
               class="form__board-size-img"
             />
           </label>
-        </label>
-        <div>
-          <label for="highlight-cells" class="form__switch">
-            Would you like the related tiles to be highlighted?</label
-          ><br />
-          <input
-            type="checkbox"
-            name="highlight-cells"
-            class="form__switch-button"
-            value="true"
-          />
-          <span class="form__switch-slider"></span>
-        </div>
-        <label class="form__switch">
-          Would you like the buttons with imposible values to be disabled?<br />
-          <input
-            type="checkbox"
-            name="highlight-buttons"
-            class="form__switch-button"
-            value="true"
-          />
-          <span class="form__switch-slider"></span>
-        </label>
-        <label class="form__switch">
-          Would you like to time the game?<br />
-          <input
-            type="checkbox"
-            name="timer"
-            class="form__switch-button"
-            value="true"
-          />
-          <span class="form__switch-slider"></span>
         </label>
       </fieldset>
       <button type="submit" class="form__submit-button">Let's Play!</button>
