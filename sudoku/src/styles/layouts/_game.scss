@@ -21,13 +21,13 @@
   &__buttons {
     height: 5rem;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 0.25rem;
     width: 100vw;
   }
 
   &__cell {
+    //all the cells
     width: 3rem;
     height: 3rem;
     font-size: 2rem;
@@ -37,9 +37,11 @@
     border: 2px solid;
 
     &--tile {
+      //cells on the board
       border-color: $border-color;
     }
 
+    //borders to make the board grid
     &--bottom-border {
       border-bottom-color: $text-color;
     }
@@ -57,16 +59,29 @@
     }
 
     &--button {
+      //buttons
       border-radius: 1rem;
       background-color: $green;
       &:hover {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         text-shadow: $highlighted 1px 1px 10px;
       }
     }
   }
 
+  .disabled {
+    //disabled buttons
+    background-color: $border-color;
+    color: $question-color;
+    text-shadow: none;
+
+    &:hover {
+      font-size: 2rem;
+    }
+  }
+
   .question {
+    //cells with question in them
     color: $question-color;
   }
 
@@ -77,18 +92,22 @@
     background-color: $highlighted;
   }
 
-  .disabled {
-    background-color: $border-color;
-    color: $question-color;
-    text-shadow: none;
-
-    &:hover {
-      font-size: 3rem;
-    }
+  .wrong {
+    //cells with wrong answer
+    color: $wrong-answer;
   }
 
-  .wrong {
-    color: $wrong-answer;
+  //board width based on size
+  .width9 {
+    width: 27.5rem;
+  }
+
+  .width6 {
+    width: 18.5rem;
+  }
+
+  .width4 {
+    width: 12.5rem;
   }
 }
 

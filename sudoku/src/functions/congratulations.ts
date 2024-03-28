@@ -1,20 +1,22 @@
+import { callOnBoardClick } from "../game";
 import { displayTimer } from "./displayTimer";
 
-export const congratulations = (board: HTMLElement): void => {
+export const congratulations = (
+  board: HTMLElement,
+  buttons: HTMLElement
+): void => {
   const congrats = board.previousElementSibling as HTMLElement;
   const fearutes = board.nextElementSibling as HTMLElement;
-  const buttons = board.nextElementSibling?.nextElementSibling as HTMLElement;
-  /*  if(myTimer.length > 0){clearInterval(myTimer);
-  congrats.getElementsByClassName("timer") = time.asString;} */
-  congrats.style.display = "flex";
+
+  congrats.classList.remove("hide");
   displayTimer(congrats, true, true);
   congrats.innerHTML += `<a href="index.html" class="congratulations__button">
           Back to homepage</a
         >`;
-  fearutes.style.display = "none";
-  buttons.style.display = "none";
-  for (const cell of Array.from(board.children)) {
-    cell.classList.remove("mainHighlight");
-    cell.classList.remove("secondaryHighlight");
+  fearutes.classList.add("hide");
+  buttons.classList.add("hide");
+  for (const tile of Array.from(board.children)) {
+    tile.classList.remove("secondaryHighlight", "mainHighlight");
   }
+  board.removeEventListener("click", callOnBoardClick);
 };

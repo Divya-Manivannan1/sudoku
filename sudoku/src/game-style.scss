@@ -1,3 +1,7 @@
 @import "./styles/base/reset";
 @import "./styles/layouts/game";
-@import "./styles/layouts/congratulations"
+@import "./styles/layouts/congratulations";
+
+.hide {
+  display: none;
+}
