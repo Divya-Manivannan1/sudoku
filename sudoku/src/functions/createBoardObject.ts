@@ -7,13 +7,8 @@ export const createBoardObject = (): Board => {
     cWidth: 2 | 3 = 2;
   let tempStrings: string[] = url.split("board-size=");
   switch (tempStrings[1][0]) {
-    case "4":
-      bWidth = 4;
-      rWidth = cWidth = 2;
-      break;
     case "6":
       bWidth = 6;
-      rWidth = 2;
       cWidth = 3;
       break;
     case "9":
@@ -29,8 +24,6 @@ export const createBoardObject = (): Board => {
     areRelatedCellsHighlighted: tempStrings[1].includes("highlight-cells"),
     areRelatedButtonsHighlighted: tempStrings[1].includes("highlight-buttons"),
     isTimerEnabled: tempStrings[1].includes("timer"),
-    isUndoEnabled: false,
-    moves: [],
   };
 
   return boardObj;

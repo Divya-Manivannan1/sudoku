@@ -3,7 +3,7 @@ import { time } from "../data/timerObj";
 export const displayTimer = (
   el: HTMLElement,
   isTimerEnabled: boolean,
-  isBoardSolved:boolean
+  isBoardSolved: boolean
 ) => {
   const timer = document.createElement("div");
   timer.innerHTML = `<time>${time.asString()}</time>`;
@@ -14,8 +14,5 @@ export const displayTimer = (
   if (isTimerEnabled || isBoardSolved) {
     el.appendChild(timer);
   }
-  if(isBoardSolved)
-  clearInterval(timerClock);
-
-
+  if (isBoardSolved) clearInterval(timerClock);
 };

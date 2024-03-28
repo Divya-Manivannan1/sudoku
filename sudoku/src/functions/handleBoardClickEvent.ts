@@ -16,9 +16,14 @@ export const handleBoardClickEvent = (
   if (areRelatedCellsHighlighted) {
     highlightReleventTiles(cell, boardObj);
   }
+  cell.classList.add("mainHighlight");
 
   //finding all possible values
-  let possibleValues: string[] = findPossibleInputs(board.children, cell);
+  let possibleValues: string[] = findPossibleInputs(
+    board.children,
+    cell,
+    boardObj
+  );
 
   //disable unsuitable buttons
   highlightReleventButtons(buttons.children, possibleValues);

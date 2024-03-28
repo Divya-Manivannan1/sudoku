@@ -1,13 +1,13 @@
-import { createBoardObject } from "./createBoardObject";
+import { Board } from "../data/types";
 
 export const findPossibleInputs = (
   tiles: HTMLCollection,
-  cell: HTMLElement
+  cell: HTMLElement,
+  boardObj: Board
 ): string[] => {
   let possibleValues: string[] = [];
   const [row, col] = cell.id.split(":");
-  const { rowWidth, columnWidth, areRelatedButtonsHighlighted } =
-    createBoardObject();
+  const { rowWidth, columnWidth, areRelatedButtonsHighlighted } = boardObj;
   const blockCol: number = Math.ceil(+col / rowWidth);
   const blockRow: number = Math.ceil(+row / columnWidth);
 
@@ -16,13 +16,15 @@ export const findPossibleInputs = (
   if (cell.textContent != "" && !cell.classList.contains("wrong"))
     return possibleValues;
 
+  //all the digits are added as possiblile valiues
   for (let n: number = 1; n <= rowWidth * columnWidth; n++) {
     possibleValues.push(`${n}`);
   }
 
-  //if user doesnt want highlights all values are returned
+  //if user doesnt want to highlight: all values are returned
   if (!areRelatedButtonsHighlighted) return possibleValues;
 
+  //all the cells and checked and some digits are eleminated as possible values.
   for (const tile of Array.from(tiles)) {
     let value: string = tile.textContent as string;
     if (value != "" && possibleValues.includes(value)) {

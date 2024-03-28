@@ -1,8 +1,4 @@
-export const displayPuzzle = (
-  board: HTMLElement,
-  puzzle: string[],
-  boardWidth: number
-): void => {
+export const displayPuzzle = (board: HTMLElement, puzzle: string[]): void => {
   const cells = board.children;
   let i: number = 0,
     j: number = 0;
@@ -14,7 +10,7 @@ export const displayPuzzle = (
       cell.textContent = "";
     }
     j++;
-    if (j == boardWidth) {
+    if (j == puzzle[i].length) {
       i++;
       j = 0;
     }
