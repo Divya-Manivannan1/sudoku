@@ -5,10 +5,8 @@ import { highlightReleventTiles } from "./highlightReleventTiles";
 
 export const handleBoardClickEvent = (
   event: Event,
-  boardObj: Board,
-  previousCell: HTMLElement
+  boardObj: Board
 ): HTMLElement => {
-  previousCell.classList.remove("mainHighlight");
   const { areRelatedCellsHighlighted } = boardObj;
   const cell = event.target as HTMLElement;
   const board = event.currentTarget as HTMLElement;
@@ -17,9 +15,11 @@ export const handleBoardClickEvent = (
   //highlights the relevent row, col and block
   if (areRelatedCellsHighlighted) {
     highlightReleventTiles(cell, boardObj);
+  } else {
+    for (const tile of Array.from(board.children))
+      tile.classList.remove("mainHighlight");
+    cell.classList.add("mainHighlight");
   }
-  cell.classList.add("mainHighlight");
-
   //finding all possible values
   let possibleValues: string[] = findPossibleInputs(
     board.children,

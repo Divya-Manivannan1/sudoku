@@ -35,9 +35,9 @@ displayPuzzle(board, puzzle.question);
 displayTimer(features, boardObj.isTimerEnabled, false);
 
 //adding event listeners to the board and the buttons and using event deligation to find the exact cell
-let cell: HTMLElement;
+let cell: HTMLElement 
 export const callOnBoardClick = (event: Event): HTMLElement =>
-  (cell = handleBoardClickEvent(event, boardObj, cell));
+  (cell = handleBoardClickEvent(event, boardObj));
 board.addEventListener("click", callOnBoardClick);
 buttons.addEventListener("click", (e: Event) =>
   handleButtonClickEvent(e, cell, puzzle.answer, boardObj)
